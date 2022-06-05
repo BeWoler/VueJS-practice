@@ -1,17 +1,20 @@
 <template>
-  <main>
-    <div>Count: {{ count }}</div>
-  </main>
+  <div>
+    <header-component />
+    <div class="app">
+      <router-view></router-view>
+    </div>
+  </div>
+  
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      count: 0,
-    };
-  },
-};
+import HeaderComponent from './components/HeaderComponent.vue';
+  export default {
+    components: {
+      HeaderComponent
+    }
+}
 </script>
 
 <style>
@@ -24,8 +27,10 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.app {
+  padding: 1.5rem;
 }
 </style>
